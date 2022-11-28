@@ -1,4 +1,3 @@
--- TODO 1.3a : Créer les tables manquantes et modifier celles ci-dessous
 CREATE TABLE LesSportifsEQ
 (
   numSp NUMBER(4),
@@ -29,6 +28,7 @@ CREATE TABLE LesEpreuves
   CONSTRAINT EP_CK4 CHECK (nbSportifsEp > 0)
 );
 
+-- 1.3 : Créer les tables manquantes et modifier celles ci-dessous
 CREATE TABLE LesInscriptions
 (
     numIn NUMBER(4),
@@ -43,10 +43,12 @@ CREATE TABLE LesResultats
   bronze number(4)
 );
 
+-- 1.4a : ajouter la définition de la vue LesAgesSportifs
 CREATE VIEW LesAgesSportifs(numSp, nomSp, prenomSp, pays, categorieSp, dateNaisSp, ageSp)
 AS
     SELECT numSp, nomSp, prenomSp, pays, categorieSp, dateNaisSp, strftime('%Y', 'now') - dateNaisSp AS ageSp FROM LesSportifsEQ;
 
+-- 1.5a : ajouter la définition de la vue LesNbsEquipiers
 CREATE VIEW LesNbEquipiers(numEq, nbEquipiersEq)
 AS
     SELECT numEq, COUNT(numEq)
@@ -54,7 +56,4 @@ AS
     WHERE numEq IS NOT NULL
     GROUP BY numEq;
 
-
--- TODO 1.4a : ajouter la définition de la vue LesAgesSportifs
--- TODO 1.5a : ajouter la définition de la vue LesNbsEquipiers
 -- TODO 3.3 : ajouter les éléments nécessaires pour créer le trigger (attention, syntaxe SQLite différent qu'Oracle)
