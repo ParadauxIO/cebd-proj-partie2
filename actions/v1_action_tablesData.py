@@ -49,4 +49,3 @@ class AppTablesDataV1(QDialog):
 
         # 1.5b : ajouter l'affichage des éléments de la vue LesNbsEquipiers après l'avoir créée
         self.refreshTable(self.ui.labelNbEquipiers, self.ui.tableNbEquipiers, "SELECT numEq, nbEquipiersEq from LesNbEquipiers")
-
