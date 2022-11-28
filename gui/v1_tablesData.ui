@@ -27,9 +27,9 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="tableResultats">
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tabEpreuves">
       <attribute name="title">
@@ -287,7 +287,7 @@
       <attribute name="title">
        <string>LesInscriptions</string>
       </attribute>
-      <widget class="QTableWidget" name="tableSportifs_2">
+      <widget class="QTableWidget" name="tableInscriptions">
        <property name="geometry">
         <rect>
          <x>20</x>
