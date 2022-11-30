@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>900</height>
+    <width>713</width>
+    <height>883</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -491,9 +491,9 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>12</x>
+      <x>-800</x>
       <y>600</y>
-      <width>685</width>
+      <width>1750</width>
       <height>32</height>
      </rect>
     </property>
@@ -503,16 +503,25 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>40</width>
-         <height>20</height>
+         <width>693</width>
+         <height>27</height>
         </size>
        </property>
       </spacer>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_2_1">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
         <string>2.1 Afficher l'âge moyen des équipes qui ont gagné une médaille d'or</string>
        </property>
@@ -522,6 +531,9 @@
       <spacer name="horizontalSpacer_17">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -936,8 +948,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>710</width>
-     <height>21</height>
+     <width>713</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFiles">
@@ -1181,6 +1193,70 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2_1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openDataR1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>399</x>
+     <y>637</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openDataR2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>677</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3_1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openDataG1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>747</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openDataG2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>350</x>
+     <y>787</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>441</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createDBV0()</slot>
@@ -1196,5 +1272,9 @@
   <slot>insertDBV1()</slot>
   <slot>openDataV1()</slot>
   <slot>createTriggersDBV1()</slot>
+  <slot>openDataR1()</slot>
+  <slot>openDataR2()</slot>
+  <slot>openDataG1()</slot>
+  <slot>openDataG2()</slot>
  </slots>
 </ui>
