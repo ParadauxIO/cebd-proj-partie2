@@ -929,6 +929,19 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_3_3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>850</y>
+      <width>263</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>3.3 Ouvrir la table de log</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1244,6 +1257,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_3_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openLogs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>885</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>469</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createDBV0()</slot>
@@ -1263,5 +1292,6 @@
   <slot>openDataR2()</slot>
   <slot>openDataG1()</slot>
   <slot>openDataG2()</slot>
+  <slot>openLogs()</slot>
  </slots>
 </ui>
