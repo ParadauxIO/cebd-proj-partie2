@@ -16,6 +16,7 @@ from actions.partie_2_1 import AppTablesPartie2S1
 from actions.partie_2_2 import AppTablesPartie2S2
 from actions.partie_3_1 import AppTablesPartie3S1
 from actions.partie_3_2 import AppTablesPartie3S2
+from actions.partie_3_3 import AppTablesPartie3S3
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -30,6 +31,7 @@ class AppWindow(QMainWindow):
     # TODO 3 : ajouter les fenetres (rep. gui) et les actions (rep. actions) correspondant aux 2 items de la partie 3.
     fct_partie_3_1 = None
     fct_partie_3_2 = None
+    fct_partie_3_3 = None
 
     # On prévoit des variables pour accueillir les fenêtres supplémentaires
     tablesDataDialogV0 = None
@@ -152,12 +154,18 @@ class AppWindow(QMainWindow):
 
     # Action en cas de clic sur le bouton de création de triggers base de données (V1)
     def createTriggersDBV1(self):
+        # db.updateDBfile ne prend pas en charge plusieurs triggers dans le même fichier
+        triggerContent = ""
+
+        with open('data/v1_createTriggers.sql') as f:
+            triggerLines = f.readlines()
+            triggerContent = "\n".join(triggerLines)
 
         try:
             # On exécute les requêtes du fichier de création
-            db.updateDBfile(self.data, "data/v1_createTriggers.sql", True)
-
+            self.data.cursor().executescript(triggerContent)
         except Exception as e:
+            print(repr(e))
             # En cas d'erreur, on affiche un message
             display.refreshLabel(self.ui.label_retour_BD,
                                  "L'erreur suivante s'est produite pendant lors de la création des triggers de la base V1: " + repr(
@@ -217,6 +225,11 @@ class AppWindow(QMainWindow):
         self.fct_partie_3_2 = AppTablesPartie3S2(self.data)
         self.fct_partie_3_2.show()
 
+    def openLogs(self):
+        if self.fct_partie_3_3 is not None:
+            self.fct_partie_3_3.close()
+        self.fct_partie_3_3 = AppTablesPartie3S3(self.data)
+        self.fct_partie_3_3.show()
     # En cas de clic sur le bouton de visualisation des données
     def openDataV0(self):
         if self.tablesDataDialogV0 is not None:
@@ -261,6 +274,7 @@ class AppWindow(QMainWindow):
             self.fct_comp_2_dialog.close()
         self.fct_comp_2_dialog = AppFctComp2Partie1(self.data)
         self.fct_comp_2_dialog.show()
+
 
     ####################################################################################################################
     # Fonctions liées aux évènements (signal/slot/event)
