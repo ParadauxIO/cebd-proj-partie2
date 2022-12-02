@@ -32,7 +32,10 @@ CREATE TABLE LesEpreuves
 CREATE TABLE LesInscriptions
 (
     numIn NUMBER(4),
-    numEp NUMBER(3)
+    numEp NUMBER(3),
+    CONSTRAINT IN_PK PRIMARY KEY (numIn),
+    CONSTRAINT IN_CK1 CHECK (numEp > 0),
+    CONSTRAINT IN_CK2 CHECK (numIn > 0)
 );
 
 CREATE TABLE LesResultats
@@ -40,7 +43,12 @@ CREATE TABLE LesResultats
   numEp NUMBER(3),
   gold NUMBER(4),
   silver NUMBER(4),
-  bronze number(4)
+  bronze number(4),
+  CONSTRAINT RE_PK PRIMARY KEY (numEp),
+  CONSTRAINT RE_CK1 CHECK (numEp > 0),
+  CONSTRAINT RE_CK2 CHECK (gold > -1),
+  CONSTRAINT RE_CK2 CHECK (silver > -1),
+  CONSTRAINT RE_CK2 CHECK (bronze > -1)
 );
 
 -- 1.4a : ajouter la définition de la vue LesAgesSportifs
