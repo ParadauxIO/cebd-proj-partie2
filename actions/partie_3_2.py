@@ -20,6 +20,29 @@ class AppTablesPartie3S2(QDialog):
     # Méthodes permettant de rafraichir les différentes tables
     ####################################################################################################################
 
+    def addButton(self):
+        try:
+            cursor = self.data.cursor()
+            cursor.execute(f'''
+            INSERT INTO LesResultats (numEp, gold, silver, bronze) 
+            VALUES ({self.ui.numEpIn.text()}, {self.ui.goldIn.text()}, {self.ui.silverIn.text()}, {self.ui.bronzeIn.text()})
+            ON CONFLICT(numEp) DO UPDATE SET gold=excluded.gold, silver=excluded.silver, bronze=excluded.bronze;
+            ''')
+            self.refreshAllTablesV1()
+            self.data.commit()
+        except Exception as e:
+            display.refreshLabel(self.ui.errorLabel, "Impossible d'afficher les résultats : " + repr(e))
+
+    def removeButton(self):
+        try:
+            cursor = self.data.cursor()
+            cursor.execute(f"DELETE FROM LesResultats WHERE numEp={self.ui.numEpIn.text()}")
+            self.refreshAllTablesV1()
+            self.data.commit()
+        except Exception as e:
+            display.refreshLabel(self.ui.errorLabel, "Impossible d'afficher les résultats : " + repr(e))
+
+
     # Fonction de mise à jour de l'affichage d'une seule table
     def refreshTable(self, table, query):
         try:
@@ -35,13 +58,4 @@ class AppTablesPartie3S2(QDialog):
     @pyqtSlot()
     def refreshAllTablesV1(self):
         # TODO fix request
-        pass
-        # self.refreshTable(self.ui.tableWidget, '''
-        # WITH nEquipes AS (
-        # SELECT LesAgesSportifs.ageSp AS Age, numEq AS nEquipe
-        #     FROM LesAgesSportifs JOIN LesSportifsEQ ON (LesAgesSportifs.numSp = LesSportifsEQ.numSp)
-        # )
-        # SELECT nEquipe AS numEq, ROUND(AVG(Age)) AS AvgAge
-        # FROM nEquipes JOIN LesResultats ON (nEquipe = gold)
-        # GROUP BY nEquipe;
-        # ''')
+        self.refreshTable(self.ui.tableWidget, "SELECT * from LesResultats")

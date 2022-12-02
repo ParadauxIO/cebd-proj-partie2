@@ -121,7 +121,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Error Label</string>
+    <string/>
    </property>
   </widget>
  </widget>

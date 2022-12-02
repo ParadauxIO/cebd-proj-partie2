@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>603</width>
-    <height>479</height>
+    <height>509</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,12 +48,12 @@
     <rect>
      <x>20</x>
      <y>450</y>
-     <width>371</width>
-     <height>20</height>
+     <width>561</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>Error Label</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLineEdit" name="numEpIn">
@@ -160,20 +160,20 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="addButton">
+  <widget class="QPushButton" name="addButton_Button">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>410</x>
      <y>40</y>
-     <width>71</width>
+     <width>91</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Add</string>
+    <string>Add/Update</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="remmoveButton">
+  <widget class="QPushButton" name="removeButton_Button">
    <property name="geometry">
     <rect>
      <x>510</x>
@@ -188,7 +188,40 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>addButton_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>addButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>455</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeButton_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>removeButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>545</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>301</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>addButton()</slot>
   <slot>removeButton()</slot>
