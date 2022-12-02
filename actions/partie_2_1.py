@@ -16,15 +16,6 @@ class AppTablesPartie2S1(QDialog):
 
         # On met à jour l'affichage avec les données actuellement présentes dans la base
         self.refreshAllTablesV1()
-        self.query = '''
-        WITH nEquipes AS (
-        SELECT LesAgesSportifs.ageSp AS Age, numEq AS nEquipe
-            FROM LesAgesSportifs JOIN LesSportifsEQ ON (LesAgesSportifs.numSp = LesSportifsEQ.numSp)
-        )
-        SELECT nEquipe AS numEq, ROUND(AVG(Age)) AS AvgAge
-        FROM nEquipes JOIN LesResultats ON (nEquipe = gold)
-        GROUP BY nEquipe;
-        '''
     ####################################################################################################################
     # Méthodes permettant de rafraichir les différentes tables
     ####################################################################################################################
@@ -43,4 +34,12 @@ class AppTablesPartie2S1(QDialog):
     # Fonction permettant de mettre à jour toutes les tables
     @pyqtSlot()
     def refreshAllTablesV1(self):
-        self.refreshTable(self.ui.ttableWidget, self.query)
+        self.refreshTable(self.ui.tableWidget, '''
+        WITH nEquipes AS (
+        SELECT LesAgesSportifs.ageSp AS Age, numEq AS nEquipe
+            FROM LesAgesSportifs JOIN LesSportifsEQ ON (LesAgesSportifs.numSp = LesSportifsEQ.numSp)
+        )
+        SELECT nEquipe AS numEq, ROUND(AVG(Age)) AS AvgAge
+        FROM nEquipes JOIN LesResultats ON (nEquipe = gold)
+        GROUP BY nEquipe;
+        ''')
