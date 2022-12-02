@@ -13,6 +13,7 @@ from actions.v0_action_fct_fournie_2_partie_0 import AppFctFournie2Partie0
 from actions.v0_action_fct_comp_1_partie_1 import AppFctComp1Partie1
 from actions.v0_action_fct_comp_2_partie_1 import AppFctComp2Partie1
 from actions.partie_2_1 import AppTablesPartie2S1
+from actions.partie_2_2 import AppTablesPartie2S2
 
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
@@ -195,7 +196,10 @@ class AppWindow(QMainWindow):
         pass
 
     def openDataR2(self):
-        print("r2")
+        if self.fct_partie_2_2 is not None:
+            self.fct_partie_2_2.close()
+        self.fct_partie_2_2 = AppTablesPartie2S2(self.data)
+        self.fct_partie_2_2.show()
         pass
 
     # T3 : ajouter la définition des méthodes déclenchées lors des clicks sur les boutons de la partie 3
