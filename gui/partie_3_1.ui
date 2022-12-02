@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>659</width>
+    <height>477</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="addButton">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>60</y>
+     <width>131</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Inscription</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="removeButton">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>60</y>
+     <width>191</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Remove Inscription</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="numInIn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>113</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="numEpIn">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>60</y>
+     <width>113</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="numInLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>69</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>numIn</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="numEpLabel">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>30</y>
+     <width>69</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>numEp</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>221</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>numIn</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>numEp</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="errorLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>450</y>
+     <width>371</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Error Label</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

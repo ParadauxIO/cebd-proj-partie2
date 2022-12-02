@@ -14,7 +14,8 @@ from actions.v0_action_fct_comp_1_partie_1 import AppFctComp1Partie1
 from actions.v0_action_fct_comp_2_partie_1 import AppFctComp2Partie1
 from actions.partie_2_1 import AppTablesPartie2S1
 from actions.partie_2_2 import AppTablesPartie2S2
-
+from actions.partie_3_1 import AppTablesPartie3S1
+from actions.partie_3_2 import AppTablesPartie3S2
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
 
@@ -26,6 +27,8 @@ class AppWindow(QMainWindow):
     fct_partie_2_2 = None
 
     # TODO 3 : ajouter les fenetres (rep. gui) et les actions (rep. actions) correspondant aux 2 items de la partie 3.
+    fct_partie_3_1 = None
+    fct_partie_3_2 = None
 
     # On prévoit des variables pour accueillir les fenêtres supplémentaires
     tablesDataDialogV0 = None
@@ -193,23 +196,25 @@ class AppWindow(QMainWindow):
             self.fct_partie_2_1.close()
         self.fct_partie_2_1 = AppTablesPartie2S1(self.data)
         self.fct_partie_2_1.show()
-        pass
 
     def openDataR2(self):
         if self.fct_partie_2_2 is not None:
             self.fct_partie_2_2.close()
         self.fct_partie_2_2 = AppTablesPartie2S2(self.data)
         self.fct_partie_2_2.show()
-        pass
 
     # T3 : ajouter la définition des méthodes déclenchées lors des clicks sur les boutons de la partie 3
     def openDataG1(self):
-        print("g1")
-        pass
+        if self.fct_partie_3_1 is not None:
+            self.fct_partie_3_1.close()
+        self.fct_partie_3_1 = AppTablesPartie3S1(self.data)
+        self.fct_partie_3_1.show()
 
     def openDataG2(self):
-        print("g2")
-        pass
+        if self.fct_partie_3_2 is not None:
+            self.fct_partie_3_2.close()
+        self.fct_partie_3_2 = AppTablesPartie3S2(self.data)
+        self.fct_partie_3_2.show()
 
     # En cas de clic sur le bouton de visualisation des données
     def openDataV0(self):
