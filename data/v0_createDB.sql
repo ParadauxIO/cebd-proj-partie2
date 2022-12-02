@@ -27,3 +27,5 @@ CREATE TABLE V0_LesEpreuves
   CONSTRAINT EP_CK3 CHECK (numEp > 0),
   CONSTRAINT EP_CK4 CHECK (nbSportifsEp > 0)
 );
+
+CREATE TABLE log (id INTEGER PRIMARY KEY, message TEXT);
