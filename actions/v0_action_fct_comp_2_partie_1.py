@@ -22,7 +22,7 @@ class AppFctComp2Partie1(QDialog):
 
     # Fonction de mise à jour de l'affichage
     def refreshResult(self):
-        # TODO 1.2 : fonction à modifier pour remplacer la zone de saisie par une liste de valeurs issues de la BD une
+        # 1.2 : fonction à modifier pour remplacer la zone de saisie par une liste de valeurs issues de la BD une
         #  fois le fichier ui correspondant mis à jour
         display.refreshLabel(self.ui.label_fct_comp_2, "")
         # if not self.ui.lineEdit_fct_comp_1.text().strip():

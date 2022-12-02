@@ -34,7 +34,6 @@ class AppTablesPartie2S2(QDialog):
     # Fonction permettant de mettre à jour toutes les tables
     @pyqtSlot()
     def refreshAllTablesV1(self):
-        # TODO fix request
         self.refreshTable(self.ui.tableWidget, '''
         WITH nEquipes AS (
         SELECT LesAgesSportifs.ageSp AS Age, numEq AS nEquipe

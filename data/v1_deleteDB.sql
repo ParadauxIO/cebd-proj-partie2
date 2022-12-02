@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS LesResultats;
 
 DROP VIEW IF EXISTS LesAgesSportifs;
 DROP VIEW IF EXISTS LesNbEquipiers;
--- TODO 3.3 : pensez à détruire vos triggers !
+--  3.3 : pensez à détruire vos triggers !
 DROP TABLE IF EXISTS log;
 DROP TRIGGER IF EXISTS on_inscriptions_insert;
 DROP TRIGGER IF EXISTS on_inscriptions_delete_trigger;

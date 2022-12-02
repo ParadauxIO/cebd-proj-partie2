@@ -64,5 +64,5 @@ AS
     WHERE numEq IS NOT NULL
     GROUP BY numEq;
 
--- TODO 3.3 : ajouter les éléments nécessaires pour créer le trigger (attention, syntaxe SQLite différent qu'Oracle)
+--  : ajouter les éléments nécessaires pour créer le trigger (attention, syntaxe SQLite différent qu'Oracle)
 CREATE TABLE log (id INTEGER PRIMARY KEY, message TEXT);

@@ -57,5 +57,5 @@ class AppTablesPartie3S2(QDialog):
     # Fonction permettant de mettre à jour toutes les tables
     @pyqtSlot()
     def refreshAllTablesV1(self):
-        # TODO fix request
+        # fix request
         self.refreshTable(self.ui.tableWidget, "SELECT * from LesResultats")

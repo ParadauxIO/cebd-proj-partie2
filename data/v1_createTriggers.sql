@@ -1,4 +1,4 @@
--- TODO 3.3 Créer un trigger pertinent
+-- 3.3 Créer un trigger pertinent
 CREATE TRIGGER on_inscriptions_insert BEFORE INSERT ON LesInscriptions
 BEGIN
     INSERT INTO log(message) VALUES ('Tentative d''ajout d''une nouvelle entree aux inscriptions : ' || new.numIn);
