@@ -53,13 +53,7 @@ class AppWindow(QMainWindow):
         # On se connecte à la base de données
         self.data = sqlite3.connect("data/jo.db")
 
-    ####################################################################################################################
-    # Définition des actions
-    ####################################################################################################################
-
-        ###################################### Actions BD V0 (ne pas toucher) #######################################
-
-        # Action en cas de clic sur le bouton de création de base de données (V0)
+    # Action en cas de clic sur le bouton de création de base de données (V0)
     def createDBV0(self):
 
         try:
