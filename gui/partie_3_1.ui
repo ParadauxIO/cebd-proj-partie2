@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>partie31dialog</class>
+ <widget class="QDialog" name="partie31dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>659</width>
-    <height>477</height>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="addButton">
+  <widget class="QPushButton" name="addButton_Button">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -26,7 +26,7 @@
     <string>Add Inscription</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="removeButton">
+  <widget class="QPushButton" name="removeButton_Button">
    <property name="geometry">
     <rect>
      <x>420</x>
@@ -96,7 +96,7 @@
     <rect>
      <x>20</x>
      <y>100</y>
-     <width>221</width>
+     <width>211</width>
      <height>341</height>
     </rect>
    </property>
@@ -115,9 +115,9 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>450</y>
-     <width>371</width>
-     <height>20</height>
+     <y>439</y>
+     <width>631</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
@@ -126,5 +126,42 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>addButton_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>partie31dialog</receiver>
+   <slot>addButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>345</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeButton_Button</sender>
+   <signal>clicked()</signal>
+   <receiver>partie31dialog</receiver>
+   <slot>removeButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>addButton()</slot>
+  <slot>removeButton()</slot>
+ </slots>
 </ui>

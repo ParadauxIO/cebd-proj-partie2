@@ -16,6 +16,7 @@ from actions.partie_2_1 import AppTablesPartie2S1
 from actions.partie_2_2 import AppTablesPartie2S2
 from actions.partie_3_1 import AppTablesPartie3S1
 from actions.partie_3_2 import AppTablesPartie3S2
+
 # Classe utilisée pour lancer la fenêtre principale de l'application et définir ses actions
 class AppWindow(QMainWindow):
 
@@ -295,4 +296,5 @@ class AppWindow(QMainWindow):
 app = QApplication(sys.argv)
 MainWindow = AppWindow()
 MainWindow.show()
+
 sys.exit(app.exec_())
